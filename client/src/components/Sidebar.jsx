@@ -16,6 +16,7 @@ import {
   X,
   Menu,
   FilePlus2,
+  LayoutGrid,
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import AccountModal from './AccountModal';
@@ -519,45 +520,61 @@ export default function Sidebar({ isCollapsed, onToggle }) {
             )}
           </NavLink>
 
-          {/* 3. Menu (Center Drop-Up Button) */}
-          <button
-            type="button"
-            onClick={() => {
-              setIsMobileNavMenuOpen(!isMobileNavMenuOpen);
-              setIsMobileProfileOpen(false);
-            }}
-            title="Open Menu"
-            className={`flex-1 min-w-0 py-1 px-0.5 rounded-xl flex flex-col items-center justify-center relative transition-all duration-200 select-none active:scale-90 ${
-              isMobileNavMenuOpen || isOtherActive
-                ? 'text-white bg-blue-600/30 ring-1 ring-blue-400/40 shadow-xs shadow-blue-500/40'
-                : 'text-slate-400 hover:text-slate-200 hover:bg-white/[0.04]'
-            }`}
-          >
-            {(isMobileNavMenuOpen || isOtherActive) && (
-              <span className="absolute -top-1 w-6 h-0.5 rounded-full bg-gradient-to-r from-blue-400 via-sky-300 to-emerald-400 shadow-[0_0_8px_rgba(56,189,248,0.95)]" />
-            )}
-            <div className="relative">
-              <Menu
-                className={`w-5 h-5 transition-transform duration-200 ${
-                  isMobileNavMenuOpen || isOtherActive
-                    ? 'text-blue-400 scale-110 drop-shadow-[0_0_8px_rgba(96,165,250,0.85)]'
-                    : 'text-slate-400'
-                }`}
-              />
-              <ChevronUp
-                className={`w-2.5 h-2.5 absolute -top-1 -right-2 text-blue-300 transition-transform ${
-                  isMobileNavMenuOpen ? 'rotate-180' : ''
-                }`}
-              />
-            </div>
-            <span
-              className={`text-[9.5px] tracking-tight mt-1 truncate max-w-full leading-none transition-colors ${
-                isMobileNavMenuOpen || isOtherActive ? 'font-bold text-white' : 'font-medium text-slate-400'
-              }`}
+          {/* 3. Menu (Center Elevated Jewel Button) */}
+          <div className="flex-1 min-w-0 flex flex-col items-center justify-center relative">
+            <button
+              type="button"
+              onClick={() => {
+                setIsMobileNavMenuOpen(!isMobileNavMenuOpen);
+                setIsMobileProfileOpen(false);
+              }}
+              title="Open Navigation Menu"
+              className="flex flex-col items-center justify-center select-none active:scale-90 transition-all duration-200 group -mt-3.5"
             >
-              Menu
-            </span>
-          </button>
+              {/* Elevated Action Disc / Jewel */}
+              <div
+                className={`w-11 h-11 rounded-2xl flex items-center justify-center transition-all duration-300 ring-4 ring-[#091024] ${
+                  isMobileNavMenuOpen || isOtherActive
+                    ? 'bg-gradient-to-tr from-blue-600 via-indigo-600 to-sky-400 text-white shadow-[0_8px_24px_rgba(37,99,235,0.6),0_0_16px_rgba(56,189,248,0.45)] scale-105'
+                    : 'bg-gradient-to-b from-[#15234d] via-[#0f1a3d] to-[#0a1128] text-blue-300 border border-blue-400/30 shadow-[0_6px_16px_rgba(0,0,0,0.5),0_0_12px_rgba(37,99,235,0.15)] group-hover:text-white group-hover:border-blue-400/60'
+                }`}
+              >
+                {isMobileNavMenuOpen ? (
+                  <X className="w-5 h-5 text-white transition-transform duration-200 rotate-90" />
+                ) : (
+                  /* Modern Stylized 3-Line Menu Icon */
+                  <div className="w-5 h-5 flex flex-col items-center justify-center space-y-1">
+                    <span
+                      className={`w-4 h-[2px] rounded-full transition-all duration-200 ${
+                        isOtherActive ? 'bg-white' : 'bg-blue-300 group-hover:bg-white'
+                      }`}
+                    />
+                    <span
+                      className={`w-2.5 h-[2px] rounded-full transition-all duration-200 -translate-x-0.5 ${
+                        isOtherActive ? 'bg-sky-200' : 'bg-blue-400 group-hover:bg-white'
+                      }`}
+                    />
+                    <span
+                      className={`w-4 h-[2px] rounded-full transition-all duration-200 ${
+                        isOtherActive ? 'bg-white' : 'bg-blue-300 group-hover:bg-white'
+                      }`}
+                    />
+                  </div>
+                )}
+              </div>
+
+              {/* Clean Menu Label */}
+              <span
+                className={`text-[9.5px] tracking-tight mt-1 truncate max-w-full leading-none transition-colors ${
+                  isMobileNavMenuOpen || isOtherActive
+                    ? 'font-bold text-sky-400'
+                    : 'font-medium text-slate-400 group-hover:text-slate-200'
+                }`}
+              >
+                Menu
+              </span>
+            </button>
+          </div>
 
           {/* 4. Employee */}
           <NavLink
