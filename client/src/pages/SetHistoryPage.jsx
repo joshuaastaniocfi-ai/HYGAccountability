@@ -211,7 +211,7 @@ export default function SetHistoryPage() {
   }
 
   return (
-    <div className="p-4 sm:p-6 lg:p-8 space-y-6 max-w-7xl mx-auto font-sans">
+    <div className="p-3.5 sm:p-6 lg:p-8 space-y-5 sm:space-y-6 max-w-7xl mx-auto font-sans">
       {/* Top Breadcrumb & Action Bar */}
       <div className="no-print flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div className="flex items-center space-x-2 text-xs">
@@ -613,7 +613,7 @@ export default function SetHistoryPage() {
           </div>
 
           {/* Right Column: Deep Dive for Selected Part */}
-          <div className="lg:col-span-8 bg-white rounded-2xl border border-slate-200 p-6 shadow-xs space-y-6">
+          <div className="lg:col-span-8 bg-white rounded-2xl border border-slate-200 p-4 sm:p-6 shadow-xs space-y-6">
             {selectedPart ? (
               <>
                 {/* Part Header & Quick Actions */}

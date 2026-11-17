@@ -426,7 +426,7 @@ export default function StoresPage() {
   };
 
   return (
-    <div className="p-4 sm:p-6 lg:p-8 space-y-6 max-w-7xl mx-auto">
+    <div className="p-3.5 sm:p-6 lg:p-8 space-y-5 sm:space-y-6 max-w-7xl mx-auto">
       {/* Top Controls Bar: Dropdown Combobox Selector & Quick Actions */}
       <div className="bg-white rounded-2xl border border-slate-200/90 p-4 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         {/* Dropdown Combobox Store Selector */}
@@ -479,7 +479,7 @@ export default function StoresPage() {
 
           {/* Combobox Dropdown Menu */}
           {isStoreDropdownOpen && (
-            <div className="absolute left-0 right-0 top-full mt-2 bg-white border border-slate-200 rounded-2xl shadow-xl z-50 overflow-hidden animate-in fade-in zoom-in-95 duration-100 min-w-[340px]">
+            <div className="absolute left-0 right-0 top-full mt-2 bg-white border border-slate-200 rounded-2xl shadow-xl z-50 overflow-hidden animate-in fade-in zoom-in-95 duration-100 w-full min-w-0 sm:min-w-[340px]">
               {/* Search & Filter Header */}
               <div className="p-3 border-b border-slate-100 bg-slate-50/90 space-y-2.5">
                 <div className="relative">
@@ -635,7 +635,7 @@ export default function StoresPage() {
       </div>
 
       {/* Store Profile Hero Banner (Full Width) */}
-      <div className="bg-white rounded-2xl border border-slate-200/90 p-6 shadow-xs relative overflow-hidden">
+      <div className="bg-white rounded-2xl border border-slate-200/90 p-4 sm:p-6 shadow-xs relative overflow-hidden">
         <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-5">
           <div className="flex items-start space-x-4">
             <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-emerald-600 to-teal-500 text-white flex items-center justify-center font-bold text-lg shadow-lg shadow-emerald-600/20 shrink-0">
@@ -736,10 +736,10 @@ export default function StoresPage() {
       {/* Full Width Content Area with View Tabs */}
       <div className="space-y-4">
         {/* View Navigation Tabs */}
-        <div className="flex items-center space-x-2 border-b border-slate-200 pb-3">
+        <div className="flex items-center space-x-2 border-b border-slate-200 pb-3 overflow-x-auto no-scrollbar max-w-full">
           <button
             onClick={() => setActiveTab('items')}
-            className={`inline-flex items-center space-x-2 px-4 py-2 rounded-xl text-xs font-bold transition ${
+            className={`inline-flex items-center space-x-2 px-3.5 sm:px-4 py-2 rounded-xl text-xs font-bold transition shrink-0 ${
               activeTab === 'items'
                 ? 'bg-emerald-600 text-white shadow-xs'
                 : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
@@ -760,7 +760,7 @@ export default function StoresPage() {
 
           <button
             onClick={() => setActiveTab('forms')}
-            className={`inline-flex items-center space-x-2 px-4 py-2 rounded-xl text-xs font-bold transition ${
+            className={`inline-flex items-center space-x-2 px-3.5 sm:px-4 py-2 rounded-xl text-xs font-bold transition shrink-0 ${
               activeTab === 'forms'
                 ? 'bg-emerald-600 text-white shadow-xs'
                 : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
@@ -781,7 +781,7 @@ export default function StoresPage() {
 
           <button
             onClick={() => setActiveTab('returns')}
-            className={`inline-flex items-center space-x-2 px-4 py-2 rounded-xl text-xs font-bold transition ${
+            className={`inline-flex items-center space-x-2 px-3.5 sm:px-4 py-2 rounded-xl text-xs font-bold transition shrink-0 ${
               activeTab === 'returns'
                 ? 'bg-emerald-600 text-white shadow-xs'
                 : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
@@ -945,7 +945,7 @@ export default function StoresPage() {
 
                     {/* Equipment Table List */}
                     <div className="overflow-x-auto">
-                      <table className="w-full text-left text-xs">
+                      <table className="w-full min-w-[780px] text-left text-xs">
                         <thead>
                           <tr className="bg-slate-50/70 border-b border-slate-200/80 text-slate-500 font-semibold text-[11px] uppercase tracking-wider">
                             <th className="py-2.5 px-2.5 w-8 text-center">#</th>

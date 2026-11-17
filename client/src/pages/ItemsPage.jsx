@@ -381,15 +381,15 @@ export default function ItemsPage() {
   };
 
   return (
-    <div className="p-4 sm:p-5 lg:p-6 space-y-6 max-w-7xl mx-auto">
+    <div className="p-3.5 sm:p-6 md:p-8 space-y-5 sm:space-y-6 max-w-7xl mx-auto">
       {/* Top View Selector Tabs & Action Buttons */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
         {/* Navigation Tabs */}
-        <div className="flex items-center bg-slate-100 p-1.5 rounded-2xl text-xs font-semibold">
+        <div className="flex items-center bg-slate-100 p-1.5 rounded-2xl text-xs font-semibold overflow-x-auto max-w-full">
           <button
             type="button"
             onClick={() => setActiveTab('catalog')}
-            className={`px-4 py-2 rounded-xl transition flex items-center space-x-2 ${
+            className={`px-3.5 sm:px-4 py-2 rounded-xl transition flex items-center space-x-2 shrink-0 ${
               activeTab === 'catalog'
                 ? 'bg-white text-slate-900 shadow-2xs font-bold'
                 : 'text-slate-600 hover:text-slate-900'
@@ -416,7 +416,7 @@ export default function ItemsPage() {
           <button
             type="button"
             onClick={() => setActiveTab('batches')}
-            className={`px-4 py-2 rounded-xl transition flex items-center space-x-2 ${
+            className={`px-3.5 sm:px-4 py-2 rounded-xl transition flex items-center space-x-2 shrink-0 ${
               activeTab === 'batches'
                 ? 'bg-white text-slate-900 shadow-2xs font-bold'
                 : 'text-slate-600 hover:text-slate-900'
@@ -437,18 +437,18 @@ export default function ItemsPage() {
         </div>
 
         {/* Action Buttons */}
-        <div className="flex items-center space-x-2.5">
+        <div className="flex items-center space-x-2 sm:space-x-2.5">
           <button
             onClick={() => setIsBatchModalOpen(true)}
-            className="inline-flex items-center space-x-2 px-3.5 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-xl shadow-sm shadow-indigo-600/20 transition"
+            className="inline-flex items-center justify-center space-x-1.5 sm:space-x-2 px-3 sm:px-3.5 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-xl shadow-sm shadow-indigo-600/20 transition flex-1 sm:flex-initial"
           >
             <Boxes className="w-4 h-4" />
-            <span>+ Batch Intake (Bulk)</span>
+            <span>+ Batch Intake</span>
           </button>
 
           <button
             onClick={() => setIsAddModalOpen(true)}
-            className="inline-flex items-center space-x-1.5 px-3.5 py-2 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-xl shadow-xs transition"
+            className="inline-flex items-center justify-center space-x-1.5 px-3 sm:px-3.5 py-2 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-xl shadow-xs transition flex-1 sm:flex-initial"
           >
             <PackagePlus className="w-4 h-4 text-emerald-400" />
             <span>+ Add Equipment</span>
@@ -622,7 +622,7 @@ export default function ItemsPage() {
               </div>
             ) : (
               <div className="overflow-x-auto">
-                <table className="w-full text-left text-xs table-fixed">
+                <table className="w-full min-w-[850px] text-left text-xs table-fixed">
                   <colgroup>
                     <col className="w-[24%]" />
                     <col className="w-[14%]" />
@@ -1436,8 +1436,8 @@ export default function ItemsPage() {
                             Loading items for this batch...
                           </div>
                         ) : (
-                          <div className="border border-slate-200 rounded-xl overflow-hidden bg-white shadow-xs">
-                            <table className="w-full text-left text-xs">
+                          <div className="border border-slate-200 rounded-xl overflow-x-auto bg-white shadow-xs">
+                            <table className="w-full min-w-[650px] text-left text-xs">
                               <thead>
                                 <tr className="bg-slate-100 text-slate-600 uppercase text-[10px] font-bold tracking-wider">
                                   <th className="py-2.5 px-4">Item Number</th>

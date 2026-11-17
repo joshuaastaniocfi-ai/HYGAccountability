@@ -512,7 +512,7 @@ export default function IssueFormWizardPage() {
   };
 
   return (
-    <div className="p-8 space-y-6 max-w-5xl mx-auto">
+    <div className="p-3.5 sm:p-6 md:p-8 space-y-4 sm:space-y-6 max-w-5xl mx-auto">
       {/* Navigation & Context Bar */}
       <div className="flex items-center justify-between pb-2 border-b border-slate-200/80">
         <Link
@@ -629,7 +629,7 @@ export default function IssueFormWizardPage() {
 
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* CARD 1: ISSUANCE & CUSTODIAN INFORMATION */}
-        <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-xs space-y-5">
+        <div className="bg-white rounded-2xl border border-slate-200 p-4 sm:p-6 shadow-xs space-y-5">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-slate-100 gap-3">
             <div className="flex items-center space-x-3">
               <div className="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-sm shrink-0">
@@ -838,7 +838,7 @@ export default function IssueFormWizardPage() {
         </div>
 
         {/* CARD 2: EQUIPMENT DETAILS TABLE (DYNAMIC MULTI-ROW & SET ISSUANCE) */}
-        <div className="bg-white rounded-3xl border border-slate-200 p-6 sm:p-7 shadow-xs space-y-5">
+        <div className="bg-white rounded-3xl border border-slate-200 p-4 sm:p-7 shadow-xs space-y-5">
           {/* Card Header */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-slate-100 gap-3">
             <div className="flex items-center space-x-3">
@@ -1111,7 +1111,7 @@ export default function IssueFormWizardPage() {
         </div>
 
         {/* CARD 3: CONDITION ACKNOWLEDGMENT, RESPONSIBILITIES & SIGNATURE */}
-        <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-xs space-y-5">
+        <div className="bg-white rounded-2xl border border-slate-200 p-4 sm:p-6 shadow-xs space-y-5">
           <div className="flex items-center space-x-3 pb-4 border-b border-slate-100">
             <div className="w-9 h-9 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center font-bold text-sm shrink-0">
               <ShieldCheck className="w-5 h-5" />

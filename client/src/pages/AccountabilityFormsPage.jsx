@@ -75,7 +75,7 @@ export default function AccountabilityFormsPage() {
   const brands = ['All', 'Goldilocks', 'DU99', 'Taters', 'Icebergs', 'Savore', 'Chatime'];
 
   return (
-    <div className="p-8 space-y-6 max-w-7xl mx-auto">
+    <div className="p-3.5 sm:p-6 md:p-8 space-y-4 sm:space-y-6 max-w-7xl mx-auto">
       {/* Search & Filter Toolbar */}
       <div className="bg-white p-4 rounded-xl border border-slate-200/90 shadow-xs flex flex-col md:flex-row gap-4 items-stretch md:items-center justify-between">
         {/* Search */}
@@ -203,7 +203,7 @@ export default function AccountabilityFormsPage() {
           </div>
         ) : (
           <div className="overflow-x-auto">
-            <table className="w-full text-left text-xs">
+            <table className="w-full min-w-[780px] text-left text-xs">
               <thead>
                 <tr className="bg-slate-50/80 border-b border-slate-200 text-slate-500 uppercase tracking-wider font-semibold">
                   <th className="py-3 px-5">Form Reference</th>

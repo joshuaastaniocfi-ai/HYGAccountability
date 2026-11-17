@@ -434,7 +434,7 @@ export default function EmployeeDetailPage() {
   );
 
   return (
-    <div className="p-8 space-y-6 max-w-7xl mx-auto">
+    <div className="p-3.5 sm:p-6 md:p-8 space-y-4 sm:space-y-6 max-w-7xl mx-auto">
       {/* Back button */}
       <div>
         <Link
@@ -447,10 +447,10 @@ export default function EmployeeDetailPage() {
       </div>
 
       {/* Employee Header Profile Card */}
-      <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-xs">
+      <div className="bg-white rounded-2xl border border-slate-200 p-4 sm:p-6 shadow-xs">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="flex items-start space-x-4">
-            <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-emerald-600 to-teal-500 text-white font-extrabold text-xl flex items-center justify-center shadow-lg shadow-emerald-500/20 shrink-0">
+            <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-tr from-emerald-600 to-teal-500 text-white font-extrabold text-lg sm:text-xl flex items-center justify-center shadow-lg shadow-emerald-500/20 shrink-0">
               {employee.name
                 .split(' ')
                 .map((n) => n[0])
@@ -459,8 +459,8 @@ export default function EmployeeDetailPage() {
             </div>
 
             <div>
-              <div className="flex items-center space-x-3">
-                <h1 className="text-2xl font-bold text-slate-900 tracking-tight">
+              <div className="flex flex-wrap items-center gap-2">
+                <h1 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
                   {employee.name}
                 </h1>
                 <span className="font-mono text-xs font-bold px-2.5 py-0.5 rounded-md bg-slate-100 text-slate-700 border border-slate-300">
@@ -892,7 +892,7 @@ export default function EmployeeDetailPage() {
           ) : (
             <div className="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden">
               <div className="overflow-x-auto">
-                <table className="w-full text-left text-xs">
+                <table className="w-full min-w-[750px] text-left text-xs">
                   <thead>
                     <tr className="bg-slate-50/80 border-b border-slate-200 text-slate-500 uppercase tracking-wider font-semibold">
                       <th className="py-3 px-5">Equipment Details</th>

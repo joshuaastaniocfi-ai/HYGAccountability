@@ -216,10 +216,11 @@ export default function PrintableForm({ record, onReturnAll, onReturnComponent }
 
       {/* Official Form Sheet (Matches EMPLOYEE EQUIPMENT ACCOUNTABILITY FORM.docx) */}
       <div
-        className="print-page bg-white border border-slate-300 rounded-lg p-10 max-w-[850px] mx-auto shadow-md text-black text-[12px] leading-normal"
+        className="print-page bg-white border border-slate-300 rounded-lg p-4 sm:p-7 md:p-10 max-w-[850px] mx-auto shadow-md text-black text-[12px] leading-normal overflow-x-auto"
         style={{ fontFamily: 'Calibri, Arial, sans-serif' }}
       >
-        {/* HEADER: Dynamic Company Logo on Left + Centered Company Text */}
+        <div className="min-w-[620px] sm:min-w-0">
+          {/* HEADER: Dynamic Company Logo on Left + Centered Company Text */}
         <div className="flex items-center justify-between pb-3">
           {/* Left Logo: Authentic Brand Logo or Clean Emblem */}
           <div className="w-36 shrink-0 flex items-center justify-start">
@@ -653,6 +654,7 @@ export default function PrintableForm({ record, onReturnAll, onReturnComponent }
               </div>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </div>

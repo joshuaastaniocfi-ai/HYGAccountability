@@ -148,16 +148,16 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="p-8 space-y-8 max-w-7xl mx-auto">
+    <div className="p-3.5 sm:p-6 md:p-8 space-y-5 sm:space-y-8 max-w-7xl mx-auto">
       {/* Welcome Banner */}
-      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-slate-900 via-slate-800 to-emerald-950 p-8 text-white shadow-xl">
+      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-slate-900 via-slate-800 to-emerald-950 p-5 sm:p-8 text-white shadow-xl">
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="max-w-xl">
             <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-medium mb-3">
               <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
               <span>Chawnah Foods Inc. Custody Tracker</span>
             </div>
-            <h1 className="text-2xl font-black tracking-tight text-white sm:text-3xl">
+            <h1 className="text-xl sm:text-2xl md:text-3xl font-black tracking-tight text-white">
               Equipment Fleet & Custody Command
             </h1>
             <p className="text-slate-300 text-xs sm:text-sm mt-2 leading-relaxed">
@@ -165,7 +165,7 @@ export default function Dashboard() {
             </p>
 
             {/* Quick search input */}
-            <form onSubmit={handleQuickSearch} className="mt-5 flex items-center max-w-md">
+            <form onSubmit={handleQuickSearch} className="mt-5 flex items-center w-full sm:max-w-md">
               <div className="relative w-full">
                 <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
                 <input
@@ -214,7 +214,7 @@ export default function Dashboard() {
       </div>
 
       {/* KPI Stats Grid */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
         {/* Total Equipment */}
         <div className="bg-white p-5 rounded-2xl border border-slate-200/90 shadow-xs hover:shadow-md transition">
           <div className="flex items-center justify-between">
@@ -322,7 +322,7 @@ export default function Dashboard() {
       {/* ======================================================== */}
       {/* PRIMARY SECTION: EQUIPMENT TYPE STATUS DISTRIBUTION GRAPH */}
       {/* ======================================================== */}
-      <div className="bg-white rounded-2xl border border-slate-200/90 p-6 shadow-xs space-y-6">
+      <div className="bg-white rounded-2xl border border-slate-200/90 p-4 sm:p-6 shadow-xs space-y-4 sm:space-y-6">
         {/* Section Header with View Mode Controls */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-100">
           <div>
@@ -640,9 +640,9 @@ export default function Dashboard() {
       </div>
 
       {/* Main Two-Column Layout: Deployment & Condition Analytics + Recent Audit Activity */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-8">
         {/* Left 2 Cols: Recent Accountability Events & Audit Stream */}
-        <div className="lg:col-span-2 bg-white rounded-2xl border border-slate-200/90 p-6 shadow-xs space-y-4">
+        <div className="lg:col-span-2 bg-white rounded-2xl border border-slate-200/90 p-4 sm:p-6 shadow-xs space-y-4">
           <div className="flex items-center justify-between pb-4 border-b border-slate-100">
             <div>
               <h2 className="font-bold text-base text-slate-900 flex items-center space-x-2">

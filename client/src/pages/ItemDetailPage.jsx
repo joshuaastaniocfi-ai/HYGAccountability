@@ -152,7 +152,7 @@ export default function ItemDetailPage() {
     (baseRemarks?.trim() ? 1 : 0) + issuanceNotes.length + returnNotes.length + auditNotes.length;
 
   return (
-    <div className="p-8 space-y-6 max-w-7xl mx-auto">
+    <div className="p-3.5 sm:p-6 md:p-8 space-y-4 sm:space-y-6 max-w-7xl mx-auto">
       {/* Back button */}
       <div>
         <Link
@@ -165,7 +165,7 @@ export default function ItemDetailPage() {
       </div>
 
       {/* Item Overview Card */}
-      <div className="bg-white rounded-3xl border border-slate-200/90 p-6 sm:p-7 shadow-xs space-y-6">
+      <div className="bg-white rounded-3xl border border-slate-200/90 p-4 sm:p-7 shadow-xs space-y-4 sm:space-y-6">
         {/* 1. Header: Equipment Identity (Full Width) */}
         <div className="flex flex-col sm:flex-row items-start gap-5">
           <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-tr from-slate-900 via-slate-800 to-slate-900 text-white flex items-center justify-center shadow-lg shadow-slate-900/15 shrink-0 border border-slate-700/50">

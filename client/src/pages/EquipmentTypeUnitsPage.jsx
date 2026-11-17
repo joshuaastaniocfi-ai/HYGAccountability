@@ -191,7 +191,7 @@ export default function EquipmentTypeUnitsPage() {
   const Icon = getEquipmentIcon(decodedType);
 
   return (
-    <div className="p-8 space-y-6 max-w-7xl mx-auto">
+    <div className="p-3.5 sm:p-6 md:p-8 space-y-4 sm:space-y-6 max-w-7xl mx-auto">
       {/* Top Back Navigation Breadcrumb */}
       <div>
         <Link
@@ -204,9 +204,9 @@ export default function EquipmentTypeUnitsPage() {
       </div>
 
       {/* Equipment Type Hero Header */}
-      <div className="bg-white rounded-3xl border border-slate-200 p-6 sm:p-7 shadow-xs">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-5">
-          <div className="flex items-center space-x-4">
+      <div className="bg-white rounded-3xl border border-slate-200 p-4 sm:p-7 shadow-xs">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 sm:gap-5">
+          <div className="flex items-start sm:items-center space-x-3.5 sm:space-x-4">
             <div className="w-14 h-14 rounded-2xl bg-emerald-600/10 text-emerald-700 border border-emerald-500/20 flex items-center justify-center font-bold shrink-0 shadow-inner">
               <Icon className="w-7 h-7" />
             </div>
@@ -454,7 +454,7 @@ export default function EquipmentTypeUnitsPage() {
 
           <div className="bg-white rounded-2xl border border-slate-200/90 shadow-2xs overflow-hidden">
             <div className="overflow-x-auto">
-              <table className="w-full text-left text-xs">
+              <table className="w-full min-w-[850px] text-left text-xs">
                 <thead>
                   <tr className="bg-slate-50 border-b border-slate-200/90 text-slate-500 font-semibold text-[11px] uppercase tracking-wider">
                     <th className="py-2.5 px-2 w-10 text-center">#</th>

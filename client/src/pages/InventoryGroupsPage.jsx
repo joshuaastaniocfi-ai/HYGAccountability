@@ -194,7 +194,7 @@ export default function InventoryGroupsPage() {
   });
 
   return (
-    <div className="p-8 space-y-6 max-w-7xl mx-auto">
+    <div className="p-3.5 sm:p-6 md:p-8 space-y-4 sm:space-y-6 max-w-7xl mx-auto">
       {/* Page Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
@@ -469,7 +469,7 @@ export default function InventoryGroupsPage() {
       ) : (
         <div className="bg-white rounded-2xl border border-slate-200/90 shadow-2xs overflow-hidden">
           <div className="overflow-x-auto">
-            <table className="w-full text-left text-xs">
+            <table className="w-full min-w-[700px] text-left text-xs">
               <thead>
                 <tr className="bg-slate-50 border-b border-slate-200/90 text-slate-500 font-semibold text-[11px] uppercase tracking-wider">
                   <th className="py-3.5 px-4 w-12 text-center">#</th>

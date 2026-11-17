@@ -55,7 +55,7 @@ export default function LoginPage() {
       {/* ======================================================== */}
       {/* LEFT COLUMN: BRANDING, SYSTEM NAME & OVERVIEW            */}
       {/* ======================================================== */}
-      <div className="lg:w-[54%] bg-gradient-to-br from-slate-950 via-slate-900 to-emerald-950 text-white flex flex-col justify-between p-8 sm:p-12 lg:p-16 relative overflow-hidden border-b lg:border-b-0 lg:border-r border-slate-800/80">
+      <div className="lg:w-[54%] bg-gradient-to-br from-slate-950 via-slate-900 to-emerald-950 text-white flex flex-col justify-between p-5 sm:p-12 lg:p-16 relative overflow-hidden border-b lg:border-b-0 lg:border-r border-slate-800/80">
         {/* Subtle Ambient Glows */}
         <div className="absolute top-10 left-10 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-10 right-10 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -144,7 +144,7 @@ export default function LoginPage() {
       {/* ======================================================== */}
       {/* RIGHT COLUMN: MODERN DARK GLASSMORPHIC LOGIN PORTAL      */}
       {/* ======================================================== */}
-      <div className="lg:w-[46%] bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 flex items-center justify-center p-6 sm:p-10 lg:p-14 relative overflow-hidden">
+      <div className="lg:w-[46%] bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 flex items-center justify-center p-4 sm:p-10 lg:p-14 relative overflow-hidden">
         {/* Soft Ambient Glow Elements */}
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -152,7 +152,7 @@ export default function LoginPage() {
 
         <div className="w-full max-w-md space-y-5 relative z-10">
           {/* Main Dark Glassmorphic Card */}
-          <div className="bg-slate-900/85 backdrop-blur-2xl rounded-3xl p-7 sm:p-9 shadow-2xl shadow-black/80 border border-slate-800 space-y-6 relative overflow-hidden">
+          <div className="bg-slate-900/85 backdrop-blur-2xl rounded-3xl p-5 sm:p-9 shadow-2xl shadow-black/80 border border-slate-800 space-y-6 relative overflow-hidden">
             {/* Top illuminated emerald accent line */}
             <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-emerald-500 to-transparent" />
 
