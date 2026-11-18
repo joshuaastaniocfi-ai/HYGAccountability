@@ -14,19 +14,25 @@ if (process.stderr && process.stderr.on) {
   process.stderr.on('error', () => {});
 }
 process.on('exit', (code) => {
-  try {
-    fs.appendFileSync('exit.log', `[${new Date().toISOString()}] Exited with code ${code}\n`);
-  } catch (_) {}
+  if (!process.env.VERCEL) {
+    try {
+      fs.appendFileSync('exit.log', `[${new Date().toISOString()}] Exited with code ${code}\n`);
+    } catch (_) {}
+  }
 });
 process.on('uncaughtException', (err) => {
-  try {
-    fs.appendFileSync('exit.log', `[${new Date().toISOString()}] Uncaught Exception: ${err.stack || err}\n`);
-  } catch (_) {}
+  if (!process.env.VERCEL) {
+    try {
+      fs.appendFileSync('exit.log', `[${new Date().toISOString()}] Uncaught Exception: ${err.stack || err}\n`);
+    } catch (_) {}
+  }
 });
 process.on('unhandledRejection', (err) => {
-  try {
-    fs.appendFileSync('exit.log', `[${new Date().toISOString()}] Unhandled Rejection: ${err.stack || err}\n`);
-  } catch (_) {}
+  if (!process.env.VERCEL) {
+    try {
+      fs.appendFileSync('exit.log', `[${new Date().toISOString()}] Unhandled Rejection: ${err.stack || err}\n`);
+    } catch (_) {}
+  }
 });
 
 const employeeRoutes = require('./routes/employeeRoutes');
@@ -89,6 +95,15 @@ async function connectDB() {
 // Ensure database is ready before processing API requests
 app.use(async (req, res, next) => {
   if (req.method === 'OPTIONS') return next();
+
+  if (process.env.VERCEL && !process.env.MONGODB_URI) {
+    return res.status(500).json({
+      error: 'Missing MONGODB_URI',
+      message: 'MONGODB_URI environment variable is not configured in Vercel.',
+      suggestion: 'Please add MONGODB_URI (e.g. MongoDB Atlas connection string) in your Vercel Project Settings > Environment Variables.'
+    });
+  }
+
   try {
     await connectDB();
     next();
@@ -121,6 +136,27 @@ apiRouter.post('/seed', async (req, res) => {
     console.error('Seed API error:', err);
     res.status(500).json({ message: 'Failed to seed database', error: err.message });
   }
+});
+
+// Root API information endpoint
+apiRouter.get('/', (req, res) => {
+  const dbState = mongoose.connection ? mongoose.connection.readyState : 0;
+  const dbStateMap = { 0: 'disconnected', 1: 'connected', 2: 'connecting', 3: 'disconnecting' };
+  res.json({
+    status: 'online',
+    database: dbStateMap[dbState] || 'unknown',
+    system: 'Chawnah Foods Inc. Equipment Accountability System API',
+    endpoints: {
+      health: '/api/health',
+      stats: '/api/stats',
+      employees: '/api/employees',
+      items: '/api/items',
+      inventory: '/api/inventory',
+      accountabilities: '/api/accountabilities',
+      auth: '/api/auth'
+    },
+    timestamp: new Date().toISOString(),
+  });
 });
 
 // Health check endpoint
